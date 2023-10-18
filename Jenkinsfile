@@ -15,7 +15,7 @@ pipeline {
         // Where your Nexus is running
         NEXUS_URL = "10.97.72.168:8081"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "shopping-cart-master"
+        NEXUS_REPOSITORY = "exo-artifacts"
         // Jenkins credential id to authenticate to Nexus OSS
         NEXUS_CREDENTIAL_ID = "nexusCredential"
         ARTIFACT_VERSION = "${BUILD_NUMBER}"
@@ -56,6 +56,7 @@ pipeline {
                     artifactPath = filesByGlob[0].path;
                     // Assign to a boolean response verifying If the artifact name exists
                     artifactExists = fileExists artifactPath;
+                    
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
