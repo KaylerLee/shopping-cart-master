@@ -42,9 +42,9 @@ pipeline {
 
             post{
                 success{
-                    pom = readMavenPom file: "pom.xml";
+
                     echo "Archiving the Artifacts"
-                    archiveArtifacts artifacts: '**/target/*.${pom.packaging}'
+                    archiveArtifacts artifacts: '**/target/*.war'
                 }
             }    
 
