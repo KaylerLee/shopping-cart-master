@@ -76,7 +76,7 @@ pipeline {
 
                                 [artifactId: pom.artifactId,
                                 classifier: '',
-                                file: filesByGlob,
+                                file: artifactPath,
                                 type: pom.packaging]
                             ]
                         );
