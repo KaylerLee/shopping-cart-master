@@ -17,11 +17,11 @@ public class DBUtil {
 
 		try {
 			if (conn == null || conn.isClosed()) {
-				ResourceBundle rb = ResourceBundle.getBundle("application");
-				String connectionString = rb.getString("db.connectionString");
-				String driverName = rb.getString("db.driverName");
-				String username = rb.getString("db.username");
-				String password = rb.getString("db.password");
+//				ResourceBundle rb = ResourceBundle.getBundle("application");
+				String connectionString = "jdbc:mysql://10.97.72.168:3306/shopping-cart";
+				String driverName = "com.mysql.cj.jdbc.Driver";
+				String username = "root";
+				String password = "admin123";
 				try {
 					Class.forName(driverName);
 				} catch (ClassNotFoundException e) {
