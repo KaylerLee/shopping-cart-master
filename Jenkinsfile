@@ -37,6 +37,20 @@ pipeline {
                     sh "mvn clean compile package -DskipTests=true"
                 }   
             }
+
+
+
+            post{
+                success{
+                    pom = readMavenPom file: "pom.xml";
+                    echo "Archiving the Artifacts"
+                    archiveArtifacts artifacts: '**/target/*.${pom.packaging}'
+                }
+            }    
+
+
+
+
         }
 
          stage("publish to nexus") {
@@ -89,9 +103,14 @@ pipeline {
                 }
             }
 
-         stage ('Deployments'){
-                stage ('Deploy to Staging Server'){
-                    steps {
-                        sh "scp **/*.war robot@admin123:/usr/share/tomcat/webapps"   
+
+        stage ('Deploy to tomcat server') {
+            steps{
+                 deploy adapters: [tomcat9(credentialsId: 'robot-tomcat', path: '', url: 'http://10.97.72.168:8888')], contextPath: null, war: '**/.*war'
+
+            }
+        }    
+
+
         }
     }
