@@ -24,7 +24,7 @@
 	String password = (String) session.getAttribute("password");
 	String userType = (String) session.getAttribute("usertype");
 
-    System.out.println("=== Username: " + username + " Password: " + password);
+    out.println("=== Username: " + username + " Password: " + password);
 	boolean isValidUser = true;
 
 	if (userType == null || userName == null || password == null || !userType.equals("customer")) {
