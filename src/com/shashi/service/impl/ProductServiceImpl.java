@@ -215,6 +215,7 @@ public class ProductServiceImpl implements ProductService {
 
 		} catch (SQLException e) {
 			e.printStackTrace();
+			System.out.printf(e.getMessage());
 		}
 
 		DBUtil.closeConnection(con);
