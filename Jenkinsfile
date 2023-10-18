@@ -56,7 +56,7 @@ pipeline {
                     artifactPath = filesByGlob[0].path;
                     // Assign to a boolean response verifying If the artifact name exists
                     artifactExists = fileExists artifactPath;
-                    
+
                     if(artifactExists) {
                         echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version}";
                         nexusArtifactUploader(
@@ -88,5 +88,10 @@ pipeline {
                 }
                 }
             }
+
+         stage ('Deployments'){
+                stage ('Deploy to Staging Server'){
+                    steps {
+                        sh "scp **/*.war robot@admin123:/usr/share/tomcat/webapps"   
         }
     }
