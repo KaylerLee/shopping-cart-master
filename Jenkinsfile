@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                   
-                    sh "-e mvn clean deploy -Dmaven.test.skip=true"
+                    sh "mvn -e clean deploy -Dmaven.test.skip=true"
                     //sh "mvn clean package -DskipTests=true"
                 }   
             }
