@@ -35,8 +35,6 @@
 					<warSourceDirectory>WebContent</warSourceDirectory>
 				</configuration>
 			</plugin>
-		</plugins>
-
 
 		<plugin>
    			<groupId>org.sonatype.plugins</groupId>
@@ -57,12 +55,7 @@
 			      <skipStaging>true</skipStaging>
 			   </configuration>
 		</plugin>
-
-
-
-
-
-
+		</plugins>
 
 
 	</build>
