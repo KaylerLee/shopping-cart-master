@@ -36,6 +36,35 @@
 				</configuration>
 			</plugin>
 		</plugins>
+
+
+		<plugin>
+   			<groupId>org.sonatype.plugins</groupId>
+   			<artifactId>nexus-staging-maven-plugin</artifactId>
+   			<version>1.5.1</version>
+			   <executions>
+			      <execution>
+			         <id>default-deploy</id>
+			         <phase>deploy</phase>
+			         <goals>
+			            <goal>deploy</goal>
+			         </goals>
+			      </execution>
+			   </executions>
+			   <configuration>
+			      <serverId>nexus</serverId>
+			      <nexusUrl>http://10.97.72.168:8081/repository/shopping-cart-master/</nexusUrl>
+			      <skipStaging>true</skipStaging>
+			   </configuration>
+		</plugin>
+
+
+
+
+
+
+
+
 	</build>
 
 	<dependencies>
