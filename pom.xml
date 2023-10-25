@@ -81,4 +81,23 @@
 			<version>1.15</version>
 		</dependency>
 	</dependencies>
+
+
+
+	<distributionManagement>
+<!-- 
+		 <repository>
+     		 <id>nexus</id>
+     		 <name>release</name>
+     		 <url>http://10.97.72.168:8081/repository/shopping-cart-master/release</url>
+   		</repository> -->
+
+  		 <snapshotRepository>
+    		  <id>nexus-snapshots</id>
+     		 <url>http://10.97.72.168:8081/repository/shopping-cart-master</url>
+  		 </snapshotRepository>
+	</distributionManagement>
+
+
+
 </project>
