@@ -119,14 +119,17 @@
      		 <url>http://10.97.72.168:8081/repository/shopping-cart-master</url>
   		 </snapshotRepository>
 
-  		 <servers>
+  		 </distributionManagement>
+  		 <settings>
+  			<servers>
   	 		<server>
     		 	<id>nexus-snapshots</id>
    		  		 <username>admin</username>
    		  		 <password>admin123</password>
    			</server>
-		</servers>
-	</distributionManagement>
+			</servers>
+		 </settings>
+	
 
 	
 
