@@ -31,10 +31,12 @@ pipeline {
             }
         }
 
+
         stage("mvn clean deploy -DskipTests=true") {
             steps {
                 script {
                     sh "mvn clean deploy -DskipTests=true"
+
                 }   
             }
 
