@@ -17,7 +17,7 @@ public class DBUtil {
 
 		try {
 			if (conn == null || conn.isClosed()) {
-				ResourceBundle rb = ResourceBundle.getBundle("application.properties");
+				ResourceBundle rb = ResourceBundle.getBundle("application");
 				String connectionString = rb.getString("db.connectionString");
 				String driverName = rb.getString("db.driverName");
 				String username = rb.getString("db.username");
