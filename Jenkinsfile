@@ -42,12 +42,6 @@ pipeline {
 
 
 
-
-
-
-
-
-
             // post{
             //     success{
 
@@ -114,7 +108,7 @@ pipeline {
 
          stage ('Deploy to tomcat server') {
              steps{
-                  deploy adapters: [tomcat9(credentialsId: 'robot-tomcat', path: '', url: 'http://127.0.0.1:80')], contextPath: null, war: 'target/shopping-cart-0.0.1-SNAPSHOT.war'
+                  deploy adapters: [tomcat9(credentialsId: 'robot-tomcat', path: '', url: 'http://127.0.0.1:80')], contextPath: null, war: '*/*.war'
 
            }
         }
